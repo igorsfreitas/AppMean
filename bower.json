@@ -1,0 +1,14 @@
+{
+  "name": "mean-stack",
+  "description": "Aprendendo Mean",
+  "main": "",
+  "authors": [
+    "igorsfreitas <igor_s_freitas@hotmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "mean"
+  ],
+  "homepage": ""
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="superhero">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="components/font-awesome/css/font-awesome.css">
+</head>
+<body>
+	
+	<section id="posts" ng-controller="PostCtrl">
+		
+		<div class="container">
+			<div class="row">
+				<h1 class="text-center">Posts</h1>
+
+				<form class="form-inline">
+					
+					<input type="text" class="form-control" ng-model="search"/>
+				</form>
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Título</th>
+							<th>Conteúdo</th>
+							<th>Tags</th>
+							<th>Likes</th>
+							<th>Opções</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="post in posts | filter: search | orderBy: '-likes'">
+							<td>{{post.title}}</td>
+							<td>{{post.content}}</td>
+							<td>{{post.tags}}</td>
+							<td>
+								<span>{{post.likes}}</span>
+								<button class="btn btn-primary btn-sm" ng-click="addLike(post)">
+									<i class="fa fa-thumbs-up"></i>
+								</button>
+
+								<button class="btn btn-primary btn-sm" ng-click="removeLike(post)">
+									<i class="fa fa-thumbs-down"></i>
+								</button>
+							</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<script src="components/angular/angular.js"></script>
+	<script src="components/jquery/dist/jquery.js"></script>
+	<script src="components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="js/controllers/post.js"></script>
+</body>
+</html>
